@@ -8,6 +8,9 @@
 // for more info, see: http://expressjs.com
 var express = require('express');
 
+var http = require('http');
+var path = require('path');
+
 // cfenv provides access to your Cloud Foundry environment
 // for more info, see: https://www.npmjs.com/package/cfenv
 var cfenv = require('cfenv');
@@ -17,6 +20,32 @@ var Twitter = require('twitter');
 
 
 var app = express();
+//setting up express server
+
+app.configure(function(){
+    app.set('port', process.env.PORT || 3000);
+    app.set('views', __dirname + '/views');
+    app.set('view engine', 'html');
+    app.engine('html', require('hogan-express'));
+    app.use(express.favicon());
+    app.use(express.logger('dev'));
+    app.use(express.bodyParser());
+    app.use(express.methodOverride());
+    app.use(app.router);
+    app.use(express.static(path.join(__dirname,'public')));
+});
+
+app.configure('development',function(){
+    app.use(express.errorHandler());
+});
+
+if ('development' == app.get('env')) {
+  app.use(express.errorHandler());
+}
+app.all('/', function (req, res) {
+
+    res.render('index.html');
+});
 
 var client = new Twitter({
   consumer_key: 'NolHz691z4uhw6FhwDIiKcGXz',
@@ -35,7 +64,7 @@ client.get('statuses/user_timeline', params, function(error, tweets, response){
 
 
 // serve the files out of ./public as our main files
-app.use(express.static(__dirname + '/public'));
+//app.use(express.static(__dirname + '/public'));
 
 
 // get the app environment from Cloud Foundry

@@ -6,9 +6,12 @@
 		"start": "node app.js"
 	},
 	"dependencies": {
-		"express": "*",
+		"express": "3.x",
 		"cfenv": "1.0.x",
-		"twitter":"*"
+		"twitter":"*",
+		"hogan-express": "*",
+		"hjs":"*"
+
 	},
 	"repository": {},
 	"engines": {
