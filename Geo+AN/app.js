@@ -24,18 +24,12 @@ var client = new Twitter({
   access_token_key: '4732218563-3dX3xfzpHaDxSIZPgVV6AUxQpBjusVI7senf9qD',
   access_token_secret: 'Ap5eVnwhkKLwyH12A50X43XO71tOZIFA57VeCikuo6Fln'
 });
-var params = {screen_name: 'nodejs'};
+var params = {screen_name: 'ayushnvijay'};
 client.get('statuses/user_timeline', params, function(error, tweets, response){
   if (!error) {
     console.log(tweets);
   }
 });
-client.get('favorites/list', function(error, tweets, response){
-  if(error) throw error;
-  console.log(tweets);  // The favorites.
-  console.log(response);  // Raw response object.
-});
-
 
 
 
