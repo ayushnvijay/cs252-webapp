@@ -92,18 +92,22 @@ app.post('/location', function(req, res){
     var params = {q: city.toString()};
         client.get('search/tweets', params, function(error, tweets, response){
             if (!error) {
-                console.log(tweets);
+                //console.log(tweets);
+                //console.log("sumfin");
+                console.log(tweets.statuses[0]);
+                console.log(tweets.statuses[0].text);
+                console.log(tweets.statuses[0].user.screen_name);
+                console.log(tweets.statuses[0].user.profile_image_url);
+                console.log(tweets.statuses.length);
+                //console.log(JSON.stringify(tweets[0]));
                 call_jsdom(htmlSource, function(window) {
                         var $ = require('jquery')(window);
-                        //var title = $("title").text();
-                        //$('#test').html("---------");
-                        //$('#test').html("---------");
                         $('#tweet1').text("Wow");
                         fs.writeFile('index.html', window.document.documentElement.outerHTML,function (error){
                             if (error) throw error;
                         });
                         res.render('index.html');
-                        console.log($('#test'));
+                        //console.log($('#test'));
                     });
             }
             else{
