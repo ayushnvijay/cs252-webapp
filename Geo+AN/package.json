@@ -13,6 +13,7 @@
     "hogan-express": "*",
     "jquery": "2.2.3",
     "jsdom": "7.x",
+    "tweet-location": "^0.1.0",
     "twitter": "*"
   },
   "repository": {},

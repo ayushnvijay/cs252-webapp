@@ -1,6 +1,6 @@
 <html lang="en" class="no-js"><head>
 	<meta charset="UTF-8">
-	<title>Tweets Around Me</title>
+	<title>The Cozy CoffeeShop</title>
     <link href="/stylesheets/bootstrap.css" rel="stylesheet">
  <style>
    .hero-unit {
@@ -19,56 +19,51 @@
         <div class="pull-right">
         </div>
         <div class="text-center">
-          <h1><a href="/">Tweets Around Me</a></h1>
+          <h1><a href="/">The Cozy CoffeeShop</a></h1>
   		<br>
-          <p>Find Tweets near me:</p>
+          <p>See what people are saying about your favorite topics:</p>
   		<br>
-
             <form action="/location" method="POST">
-  	<b>Address:</b>
-  		    <input type="text" name="address" value="">
-  	<b>City:</b>
-  		    <input type="text" name="city" value="">
+  	<b>Topic 1:</b>
+  		    <input type="text" name="topic1" value="">
+  	<b>Topic 2:</b>
+  		    <input type="text" name="topic2" value="">
   	<br>
-  	<b>State:</b>
-  			<input type="text" name="state" value="">
-
-
+  	<b>Topic 3:</b>
+  			<input type="text" name="topic3" value="">
               <input type="submit" class="btn" value="Find">
             </form>
       </div>
     </div>
 	<header>
-		<h1>Timeline</h1>
+		<h1></h1>
 	</header>
 
 	<section id="cd-timeline" class="cd-container">
 
 		<div class="cd-timeline-block">
 
-
 			<div class="cd-timeline-content">
-				<h2 align="center">1st Tweet</h2>
-				<p id="tweet1">RT @HARDWELL: Always a great time in San Francisco! Here's episode 2 of my travels with @KLM: https://t.co/QvGlFZSpYp
-https://t.co/Cr4easeJ…</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Jan 14</span>
+				<h2 id="user1" align="center">doug_fresco</h2>
+				<p id="tweet1" align="left">RT @JenniSiri: Let's make sure Indiana goes for Bernie. Please go see him, you'll love him, seriously. Indiana is an open... https://t.co/7…</p>
+				<a href="#0" class="cd-read-more"></a>
+				<span class="cd-date"></span>
 			</div> <!-- cd-timeline-content -->
             <div class="cd-timeline-img cd-picture">
-				<img src="/images/cd-icon-picture.svg" alt="Picture">
+				<img id="tweet1Pic" src="http://pbs.twimg.com/profile_images/722973029920321537/nsjSzeJV_normal.jpg" alt="" style="width: 50px; height: 50px;">
 			</div> <!-- cd-timeline-img -->
 		</div> <!-- cd-timeline-block -->
 
 		<div class="cd-timeline-block">
 
 			<div class="cd-timeline-content">
-				<h2 align="center">2nd Tweet</h2>
-				<p id="tweet2">#ROBLOX #ROBLOXDev San francisco With R15 https://t.co/Qsqm2eegOE</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Jan 18</span>
+				<h2 id="user2" align="center">JenniSiri</h2>
+				<p id="tweet2" align="right">Let's make sure Indiana goes for Bernie. Please go see him, you'll love him, seriously. Indiana is an open... https://t.co/7WXXJDCINy</p>
+				<a href="#0" class="cd-read-more"></a>
+				<span class="cd-date"></span>
 			</div> <!-- cd-timeline-content -->
             <div class="cd-timeline-img cd-movie">
-				<img src="/images/cd-icon-movie.svg" alt="Movie">
+				<img id="tweet2Pic" src="http://pbs.twimg.com/profile_images/676277610217771008/Vykpim-Z_normal.png" style="width: 50px; height: 50px;">
 			</div> <!-- cd-timeline-img -->
 
 		</div> <!-- cd-timeline-block -->
@@ -77,26 +72,26 @@ https://t.co/Cr4easeJ…</p>
 
 
 			<div class="cd-timeline-content">
-				<h2 align="center">3rd Tweet</h2>
-				<p id="tweet3">RT @PadreJosePalmar: En San Francisco hubo saqueos en Panaderías, caso de PAGUE MENOS según los propios vecinos los autores materiales fuer…</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Jan 24</span>
+				<h2 id="user3" align="center">pharostribune</h2>
+				<p id="tweet3" align="left">RT @PharosKJD: Front of the giant line waiting for the Bernie Sanders town hall at Purdue today. #PTIndiana16 https://t.co/2QMSgupG1X</p>
+				<a href="#0" class="cd-read-more"></a>
+				<span class="cd-date"></span>
 			</div> <!-- cd-timeline-content -->
             <div class="cd-timeline-img cd-picture">
-				<img src="/images/cd-icon-picture.svg" alt="Picture">
+				<img id="tweet3Pic" usemap="" src="http://pbs.twimg.com/profile_images/528494770868719616/AolFgJ3O_normal.jpeg" style="width: 50px; height: 50px;">
 			</div> <!-- cd-timeline-img -->
 		</div> <!-- cd-timeline-block -->
 
 		<div class="cd-timeline-block">
 
 			<div class="cd-timeline-content">
-				<h2 align="center">4th Tweet</h2>
-				<p id="tweet4">Welcome to Argus HD! Video Production-Live Webcasting-VR-360 in San Francisco, Los Angeles &amp;amp; Beyond!: https://t.co/cf2laZy71x via</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Feb 14</span>
+				<h2 id="user4" align="center">pharostribune</h2>
+				<p id="tweet4" align="right">RT @PharosMK: @PharosKJD is at the Bernie Sanders town hall meeting on the Purdue campus today. Follow her for updates throughout the day.…</p>
+				<a href="#0" class="cd-read-more"></a>
+				<span class="cd-date"></span>
 			</div> <!-- cd-timeline-content -->
             <div class="cd-timeline-img cd-location">
-				<img src="/images/cd-icon-location.svg" alt="Location">
+				<img id="tweet4Pic" src="http://pbs.twimg.com/profile_images/528494770868719616/AolFgJ3O_normal.jpeg" style="width: 50px; height: 50px;">
 			</div> <!-- cd-timeline-img -->
 
 		</div> <!-- cd-timeline-block -->
@@ -105,25 +100,25 @@ https://t.co/Cr4easeJ…</p>
 
 
 			<div class="cd-timeline-content">
-				<h2 align="center">5th Tweet</h2>
-				<p id="tweet5">RT @PlCTURE_EARTH: San Francisco https://t.co/a7acGhjXg4</p>
-				<a href="#0" class="cd-read-more">Read more</a>
-				<span class="cd-date">Feb 18</span>
+				<h2 id="user5" align="center">DeannaFryTV</h2>
+				<p id="tweet5" align="left">Bernie Sanders to hold campaign events Wednesday at Purdue, IU https://t.co/9IOQraC6xx https://t.co/zbgDJeIre2</p>
+				<a href="#0" class="cd-read-more"></a>
+				<span class="cd-date"></span>
 			</div> <!-- cd-timeline-content -->
             <div class="cd-timeline-img cd-location">
-				<img src="/images/cd-icon-location.svg" alt="Location">
+				<img id="tweet5Pic" src="http://pbs.twimg.com/profile_images/724682393345359872/kLq0CKeJ_normal.jpg" style="width: 50px; height: 50px;">
 			</div> <!-- cd-timeline-img -->
 		</div> <!-- cd-timeline-block -->
 
 		<div class="cd-timeline-block">
 
 			<div class="cd-timeline-content">
-				<h2 align="center">Final Section</h2>
-				<p id="tweet6">Product Manager, Growth - Getaround - San Francisco, CA https://t.co/jB90DT4tI9 #SFSocialJobs #SanFrancisco #SocialMedia #Jobs</p>
-				<span class="cd-date">Feb 26</span>
+				<h2 id="user6" align="center">sprinkledJonuts</h2>
+				<p id="tweet6" align="right">RT @m_schabel: I wish Leslie Knope was coming to Purdue instead of Bernie Sanders 🙄🙄🙄🙄 https://t.co/3qSuIbKgxp</p>
+				<span class="cd-date"></span>
 			</div> <!-- cd-timeline-content -->
             <div class="cd-timeline-img cd-movie">
-				<img src="/images/cd-icon-movie.svg" alt="Movie">
+				<img id="tweet6Pic" src="http://pbs.twimg.com/profile_images/509533399778725889/T8PRocux_normal.jpeg" style="width: 50px; height: 50px;">
 			</div> <!-- cd-timeline-img -->
 
 		</div> <!-- cd-timeline-block -->
@@ -133,7 +128,7 @@ https://t.co/Cr4easeJ…</p>
 
 
 
-</div><script class="jsdom" src="http://code.jquery.com/jquery.js"></script><script class="jsdom" src="http://code.jquery.com/jquery.js"></script>
+</div><script class="jsdom" src="http://code.jquery.com/jquery.js"></script>
 <script class="jsdom" src="http://code.jquery.com/jquery.js"></script>
-<script class="jsdom" src="http://code.jquery.com/jquery.js"></script><script class="jsdom" src="http://code.jquery.com/jquery.js"></script>
-<script class="jsdom" src="http://code.jquery.com/jquery.js"></script><script class="jsdom" src="http://code.jquery.com/jquery.js"></script><script class="jsdom" src="http://code.jquery.com/jquery.js"></script></body></html>
+<script class="jsdom" src="http://code.jquery.com/jquery.js"></script><script class="jsdom" src="http://code.jquery.com/jquery.js"></script><script class="jsdom" src="http://code.jquery.com/jquery.js"></script><script class="jsdom" src="http://code.jquery.com/jquery.js"></script><script class="jsdom" src="http://code.jquery.com/jquery.js"></script>
+<script class="jsdom" src="http://code.jquery.com/jquery.js"></script></body></html>
