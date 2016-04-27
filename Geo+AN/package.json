@@ -11,7 +11,8 @@
 		"twitter":"*",
 		"hogan-express": "*",
 		"hjs":"*",
-		"static-maps":"2.1.2"
+		"static-maps":"2.1.2",
+		"jsdom":"7.x"
 
 	},
 	"repository": {},

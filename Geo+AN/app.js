@@ -11,6 +11,33 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 
+var fs = require('fs');
+var jsdom = require("jsdom");
+var htmlSource = fs.readFileSync("index.html", "utf8");
+    function documentToSource(doc) {
+        // The non-standard window.document.outerHTML also exists,
+        // but currently does not preserve source code structure as well
+
+        // The following two operations are non-standard
+        return doc.doctype.toString()+doc.innerHTML;
+    }
+    function call_jsdom(source, callback) {
+        jsdom.env(
+            source,
+            [ "http://code.jquery.com/jquery.js"],
+            function(errors, window) {
+                process.nextTick(
+                    function () {
+                        if (errors) {
+                            throw new Error("There were errors: "+errors);
+                        }
+                        callback(window);
+                    }
+                );
+            }
+        );
+    }
+
 // cfenv provides access to your Cloud Foundry environment
 // for more info, see: https://www.npmjs.com/package/cfenv
 var cfenv = require('cfenv');
@@ -30,7 +57,7 @@ var client = new Twitter({
 
 app.configure(function(){
     app.set('port', process.env.PORT || 3000);
-    app.set('views', __dirname + '/views');
+    app.set('views', __dirname + '/');
     app.set('view engine', 'html');
     app.engine('html', require('hogan-express'));
     app.use(express.favicon());
@@ -66,6 +93,18 @@ app.post('/location', function(req, res){
         client.get('search/tweets', params, function(error, tweets, response){
             if (!error) {
                 console.log(tweets);
+                call_jsdom(htmlSource, function(window) {
+                        var $ = require('jquery')(window);
+                        //var title = $("title").text();
+                        //$('#test').html("---------");
+                        //$('#test').html("---------");
+                        $('#tweet1').text("Wow");
+                        fs.writeFile('index.html', window.document.documentElement.outerHTML,function (error){
+                            if (error) throw error;
+                        });
+                        res.render('index.html');
+                        console.log($('#test'));
+                    });
             }
             else{
                 console.log(error);
@@ -73,13 +112,6 @@ app.post('/location', function(req, res){
         });
     }
 });
-
-
-
-
-
-
-
 // serve the files out of ./public as our main files
 //app.use(express.static(__dirname + '/public'));
 
