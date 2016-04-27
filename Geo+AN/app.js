@@ -10,6 +10,8 @@ var express = require('express');
 
 var http = require('http');
 var path = require('path');
+var cfenv = require('cfenv');
+var appEnv = cfenv.getAppEnv();
 
 var fs = require('fs');
 var jsdom = require("jsdom");
@@ -40,7 +42,7 @@ var htmlSource = fs.readFileSync("index.html", "utf8");
 
 // cfenv provides access to your Cloud Foundry environment
 // for more info, see: https://www.npmjs.com/package/cfenv
-var cfenv = require('cfenv');
+
 
 // create a new express server
 var Twitter = require('twitter');
@@ -56,7 +58,7 @@ var client = new Twitter({
 });
 
 app.configure(function(){
-    app.set('port', process.env.PORT || 3000);
+    app.set('port', appEnv.port || 3000);
     app.set('views', __dirname + '/');
     app.set('view engine', 'html');
     app.engine('html', require('hogan-express'));
@@ -102,7 +104,13 @@ app.post('/location', function(req, res){
                 //console.log(JSON.stringify(tweets[0]));
                 call_jsdom(htmlSource, function(window) {
                         var $ = require('jquery')(window);
-                        $('#tweet1').text("Wow");
+                        $('#tweet1').text(tweets.statuses[0].text);
+                        $('#tweet2').text(tweets.statuses[1].text);
+                        $('#tweet3').text(tweets.statuses[2].text);
+                        $('#tweet4').text(tweets.statuses[3].text);
+                        $('#tweet5').text(tweets.statuses[4].text);
+                        $('#tweet6').text(tweets.statuses[5].text);
+
                         fs.writeFile('index.html', window.document.documentElement.outerHTML,function (error){
                             if (error) throw error;
                         });

@@ -1,21 +1,22 @@
 {
-	"name": "NodejsStarterApp",
-	"version": "0.0.1",
-    "private": true,
-	"scripts": {
-		"start": "node app.js"
-	},
-	"dependencies": {
-		"express": "3.x",
-		"cfenv": "1.0.x",
-		"twitter":"*",
-		"hogan-express": "*",
-		"hjs":"*",
-		"jsdom":"7.x"
-
-	},
-	"repository": {},
-	"engines": {
-		"node": "5.11.0"
-	}
+  "name": "geo-an",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cfenv": "1.0.x",
+    "express": "3.x",
+    "hjs": "*",
+    "hogan-express": "*",
+    "jquery": "2.2.3",
+    "jsdom": "7.x",
+    "twitter": "*"
+  },
+  "repository": {},
+  "engines": {
+    "node": "5.11.0"
+  }
 }
