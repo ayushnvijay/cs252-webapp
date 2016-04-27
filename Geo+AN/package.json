@@ -11,12 +11,11 @@
 		"twitter":"*",
 		"hogan-express": "*",
 		"hjs":"*",
-		"static-maps":"2.1.2",
 		"jsdom":"7.x"
 
 	},
 	"repository": {},
 	"engines": {
-		"node": "4.2.x"
+		"node": "5.11.0"
 	}
 }
